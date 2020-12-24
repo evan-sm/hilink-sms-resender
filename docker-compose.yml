@@ -1,0 +1,13 @@
+version: '3'
+services:
+  hlsms:
+    image: wmw9/hilink-sms-resender
+    #build: .
+    restart: on-failure
+    networks:
+      - backend
+    env_file:
+      - ./.env
+networks:
+  backend:
+    driver: bridge
